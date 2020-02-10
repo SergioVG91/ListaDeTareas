@@ -1,0 +1,6 @@
+@import './base/variables.scss', './base/mixin.scss', './base/placeholder.scss';
+body {
+  margin: 0px;
+  background-color: $background-color;
+  font-family: $fuente;
+}

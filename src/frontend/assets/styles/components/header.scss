@@ -1,0 +1,32 @@
+@import '../base/variables.scss', '../base/mixin.scss', '../base/placeholder.scss';
+.header {
+  background-color: $background-color-header;
+  color: $text-color-header;
+  width: 100%;
+  height: $size_header;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  align-self: center;
+  width: 600px;
+}
+.header__logo--nombre {
+  font-size: 30px;
+  padding: 20px;
+}
+
+.header__menu {
+  align-self: center;
+  margin-left: 10px;
+  width: 360px;
+}
+
+.header__lista {
+  display: flex;
+}
+
+.header__elemento {
+  list-style-type: none;
+  width: 55px;
+}
