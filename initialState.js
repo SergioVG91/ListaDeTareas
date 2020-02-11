@@ -8,6 +8,7 @@ export default {
       finalHour: 15,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 2,
@@ -17,6 +18,7 @@ export default {
       finalHour: 13,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: true,
     },
     {
       _id: 3,
@@ -26,6 +28,7 @@ export default {
       finalHour: 17,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 4,
@@ -35,6 +38,7 @@ export default {
       finalHour: 16,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 5,
@@ -44,6 +48,7 @@ export default {
       finalHour: 17.3,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 6,
@@ -53,6 +58,7 @@ export default {
       finalHour: 10.3,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 7,
@@ -63,6 +69,7 @@ export default {
       finalHour: 1,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 8,
@@ -72,6 +79,7 @@ export default {
       finalHour: 10,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 9,
@@ -81,6 +89,7 @@ export default {
       finalHour: 9,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 10,
@@ -90,6 +99,7 @@ export default {
       finalHour: 8,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 11,
@@ -99,6 +109,7 @@ export default {
       finalHour: 21,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 12,
@@ -108,6 +119,7 @@ export default {
       finalHour: 22,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
     {
       _id: 13,
@@ -117,6 +129,7 @@ export default {
       finalHour: 24,
       days: ['all'],
       prioridad: 'alta',
+      isComplete: false,
     },
   ],
 };

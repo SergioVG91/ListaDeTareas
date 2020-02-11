@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Task from './Task';
+import NewTask from './NewTask';
 import '../assets/styles/components/board.scss';
 
 const mapTasks = (task) => {
@@ -9,7 +10,12 @@ const mapTasks = (task) => {
 
 const Board = ({ tasks }) => {
   tasks.sort((a, b) => a.initialHour - b.initialHour);
-  return <div className="board">{tasks.map(mapTasks)}</div>;
+  return (
+    <div className="board">
+      <NewTask />
+      {tasks.map(mapTasks)}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => {
