@@ -3,14 +3,14 @@ const reducer = (state, action) => {
     case 'DELETE_TASK': {
       return {
         ...state,
-        tasks: state.tasks.filter((task) => task._id !== action.payload.taskId),
+        tasks: state.tasks.filter((task) => task._id !== action.payload._id),
       };
     }
     case 'TOGGLE_COMPLETE_TASK': {
       return {
         ...state,
         tasks: state.tasks.map((task) => {
-          if (task._id === action.payload.taskId) {
+          if (task._id === action.payload._id) {
             return {
               ...task,
               isComplete: !task.isComplete,
@@ -24,6 +24,17 @@ const reducer = (state, action) => {
       return {
         ...state,
         tasks: [...state.tasks, action.payload],
+      };
+    }
+    case 'EDIT_TASK': {
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task._id === action.payload._id) {
+            return action.payload;
+          }
+          return task;
+        }),
       };
     }
     default:
