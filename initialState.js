@@ -83,7 +83,7 @@ export default {
     },
     {
       _id: 9,
-      title: 'Checar las redes sociales',
+      title: 'Checar las redes sociales para encontrar cosas de interes',
       content: 'Entrar a facebook, linkedin, twitter para ocio, ofertas y recursos de interes',
       initialHour: 8,
       finalHour: 9,

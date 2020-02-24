@@ -6,6 +6,7 @@ import EditTask from './EditTask';
 
 let fakeId = 100;
 
+//Componente contenedor cuya responsabilidad es la logica y manejo de datos
 const NewTask = (props) => {
   const [form, setForm] = useState({
     title: '',

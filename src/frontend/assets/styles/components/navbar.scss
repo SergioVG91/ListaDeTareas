@@ -1,0 +1,23 @@
+@import '../base/variables.scss', '../base/mixin.scss', '../base/placeholder.scss';
+
+.navbar__menu {
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: $background-color-header;
+  border-top: 1px solid #e0e0e0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  //max-width: 500px;
+  position: fixed;
+}
+
+.navbar__icon {
+  color: white;
+  text-decoration: none;
+}

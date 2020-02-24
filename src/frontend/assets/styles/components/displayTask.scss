@@ -1,0 +1,28 @@
+.display-task {
+  padding: 0px 5px;
+}
+.display-task__title {
+  margin-bottom: 5px;
+  width: 260px;
+  font-size: 22px;
+}
+.display-task__content {
+  margin-bottom: 5px;
+  color: #9c9ea5;
+  font-size: 14px;
+}
+.display-task__time {
+  margin-bottom: 5px;
+  color: #9c9ea5;
+  font-size: 14px;
+}
+
+.display-task__main {
+  display: flex;
+  align-items: center;
+}
+
+.display-task__image {
+  //width: 40px;
+  margin-right: 12px;
+}
