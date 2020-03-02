@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from './reducers';
-import initialState from '../../initialState';
-//import HelloMaki from './components/HelloMaki';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from 'redux-thunk';
+import reducers from './reducers';
 import App from './routes/App';
 import './assets/styles/app.scss';
 
-const store = createStore(
-  reducer,
-  initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(reducers, {}, composeEnhancer(applyMiddleware(reduxThunk)));
 
 ReactDOM.render(
   <Provider store={store}>

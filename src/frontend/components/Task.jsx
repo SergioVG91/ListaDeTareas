@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { FaTimesCircle, FaRegEdit, FaTrash } from 'react-icons/fa';
-import { deleteTask, toggleCompleteTask, editTask } from '../actions';
+import { deleteTask, toggleCompleteTask, editTask } from '../actions/tasksActions';
 import '../assets/styles/components/task.scss';
 import DisplayTask from './DisplayTask';
 import EditTask from './EditTask';
@@ -20,7 +20,7 @@ const Task = (props) => {
       finalHour: task.finalHour,
       isComplete: task.isComplete,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       _id: task._id,
     },
   });

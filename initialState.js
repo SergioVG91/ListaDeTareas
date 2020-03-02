@@ -7,7 +7,7 @@ export default {
       initialHour: 13,
       finalHour: 15,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -17,7 +17,7 @@ export default {
       initialHour: 10.3,
       finalHour: 13,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: true,
     },
     {
@@ -27,7 +27,7 @@ export default {
       initialHour: 16,
       finalHour: 17,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -37,7 +37,7 @@ export default {
       initialHour: 15,
       finalHour: 16,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -47,7 +47,7 @@ export default {
       initialHour: 17,
       finalHour: 17.3,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -57,7 +57,7 @@ export default {
       initialHour: 10,
       finalHour: 10.3,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -68,7 +68,7 @@ export default {
       initialHour: 0,
       finalHour: 1,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -78,7 +78,7 @@ export default {
       initialHour: 9,
       finalHour: 10,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -88,7 +88,7 @@ export default {
       initialHour: 8,
       finalHour: 9,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -98,7 +98,7 @@ export default {
       initialHour: 1,
       finalHour: 8,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -108,7 +108,7 @@ export default {
       initialHour: 17.3,
       finalHour: 21,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -118,7 +118,7 @@ export default {
       initialHour: 21,
       finalHour: 22,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
     {
@@ -128,7 +128,7 @@ export default {
       initialHour: 22,
       finalHour: 24,
       days: ['all'],
-      prioridad: 'alta',
+      priority: 'alta',
       isComplete: false,
     },
   ],

@@ -15,7 +15,7 @@ const Board = ({ tasks }) => {
 
 const mapStateToProps = (state) => {
   return {
-    tasks: state.tasks,
+    tasks: state.tasksReducer.tasks,
   };
 };
 

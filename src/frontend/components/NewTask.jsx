@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { setTask } from '../actions';
+import { setTask } from '../actions/tasksActions';
 import '../assets/styles/components/newTask.scss';
 import EditTask from './EditTask';
 
@@ -15,7 +15,7 @@ const NewTask = (props) => {
     finalHour: '',
     isComplete: false,
     days: ['all'],
-    prioridad: 'alta',
+    priority: 'alta',
     _id: fakeId,
   });
   const handleInputs = (event) => {
