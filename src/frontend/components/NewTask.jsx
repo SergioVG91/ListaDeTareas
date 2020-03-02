@@ -4,8 +4,6 @@ import { setTask } from '../actions/tasksActions';
 import '../assets/styles/components/newTask.scss';
 import EditTask from './EditTask';
 
-let fakeId = 100;
-
 //Componente contenedor cuya responsabilidad es la logica y manejo de datos
 const NewTask = (props) => {
   const [form, setForm] = useState({
@@ -14,9 +12,8 @@ const NewTask = (props) => {
     initialHour: '',
     finalHour: '',
     isComplete: false,
-    days: ['all'],
+    // days: ['all'],
     priority: 'alta',
-    _id: fakeId,
   });
   const handleInputs = (event) => {
     setForm({
@@ -26,7 +23,6 @@ const NewTask = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    fakeId++;
     props.setTask(form);
   };
   return (

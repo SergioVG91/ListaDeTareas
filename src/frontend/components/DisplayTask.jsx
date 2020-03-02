@@ -10,7 +10,7 @@ const DisplayTask = (props) => {
       <div className="display-task__main">
         <div
           className="display-task__image"
-          onClick={() => handleIsComplete(task._id)}
+          onClick={() => handleIsComplete(task._id, task.isComplete)}
           role="button"
           tabIndex="0"
         >

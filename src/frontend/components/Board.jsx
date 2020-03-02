@@ -3,12 +3,17 @@ import { connect } from 'react-redux';
 import Task from './Task';
 //import NewTask from './NewTask';
 import '../assets/styles/components/board.scss';
+import { getTasks } from '../actions/tasksActions';
 
 const mapTasks = (task) => {
   return <Task key={task._id} task={task} />;
 };
 
-const Board = ({ tasks }) => {
+const Board = ({ tasks, getTasks }) => {
+  // useEffect(() => {
+  if (tasks.length === 0) getTasks();
+  // }, tasks);
+  console.log(tasks);
   tasks.sort((a, b) => a.initialHour - b.initialHour);
   return <div className="board">{tasks.map(mapTasks)}</div>;
 };
@@ -19,5 +24,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Board);
+const mapDispatchToProps = {
+  getTasks,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Board);
 //<NewTask />;

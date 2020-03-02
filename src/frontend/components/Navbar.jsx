@@ -13,7 +13,7 @@ const Navbar = () => (
     <Link to="/" className="navbar__icon">
       <FaClipboardList size={SIZE} />
     </Link>
-    <Link to="/" className="navbar__icon">
+    <Link to="/newTask" className="navbar__icon">
       <FaRegPlusSquare size={SIZE} />
     </Link>
     <Link to="/" className="navbar__icon">

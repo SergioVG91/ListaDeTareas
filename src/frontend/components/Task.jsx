@@ -13,15 +13,15 @@ const Task = (props) => {
     isEditable: false,
     loading: false,
     error: null,
+    _id: task._id,
     form: {
       title: task.title,
       content: task.content,
       initialHour: task.initialHour,
       finalHour: task.finalHour,
       isComplete: task.isComplete,
-      days: ['all'],
+      //  days: ['all'],
       priority: 'alta',
-      _id: task._id,
     },
   });
   const handleInputs = (event) => {
@@ -36,10 +36,10 @@ const Task = (props) => {
   };
 
   const handleDelete = (taskId) => {
-    props.deleteTask({ _id: taskId });
+    props.deleteTask(taskId);
   };
-  const handleIsComplete = (taskId) => {
-    props.toggleCompleteTask({ _id: taskId });
+  const handleIsComplete = (taskId, taskIsComplete) => {
+    props.toggleCompleteTask(taskId, taskIsComplete);
   };
   const handleEdit = () => {
     setState({
@@ -49,7 +49,7 @@ const Task = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.editTask(state.form);
+    props.editTask(state._id, state.form);
     handleEdit();
   };
   return (

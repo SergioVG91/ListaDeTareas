@@ -1,10 +1,4 @@
-import {
-  GET_TASKS,
-  DELETE_TASK,
-  TOGGLE_COMPLETE_TASK,
-  SET_TASK,
-  EDIT_TASK,
-} from '../types/tasksTypes';
+import { GET_TASKS, ERROR, LOADING, SAVE, EDIT_TASK, DELETE_TASK } from '../types/tasksTypes';
 
 const INITIAL_STATE = {
   tasks: [],
@@ -15,33 +9,16 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_TASKS: {
-      return { ...state, tasks: action.payload };
+      return { ...state, tasks: action.payload, loading: false, error: '' };
     }
-    case DELETE_TASK: {
-      return {
-        ...state,
-        tasks: state.tasks.filter((task) => task._id !== action.payload._id),
-      };
+    case LOADING: {
+      return { ...state, loading: true };
     }
-    case TOGGLE_COMPLETE_TASK: {
-      return {
-        ...state,
-        tasks: state.tasks.map((task) => {
-          if (task._id === action.payload._id) {
-            return {
-              ...task,
-              isComplete: !task.isComplete,
-            };
-          }
-          return task;
-        }),
-      };
+    case ERROR: {
+      return { ...state, loading: false, error: action.payload };
     }
-    case SET_TASK: {
-      return {
-        ...state,
-        tasks: [...state.tasks, action.payload],
-      };
+    case SAVE: {
+      return { ...state, tasks: [], loading: false, error: '' };
     }
     case EDIT_TASK: {
       return {
@@ -52,6 +29,12 @@ export default (state = INITIAL_STATE, action) => {
           }
           return task;
         }),
+      };
+    }
+    case DELETE_TASK: {
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task._id !== action.payload._id),
       };
     }
     default:
