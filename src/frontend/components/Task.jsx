@@ -40,6 +40,13 @@ const Task = (props) => {
   };
   const handleIsComplete = (taskId, taskIsComplete) => {
     props.toggleCompleteTask(taskId, taskIsComplete);
+    setState({
+      ...state,
+      form: {
+        ...state.form,
+        isComplete: !taskIsComplete,
+      },
+    });
   };
   const handleEdit = () => {
     setState({
@@ -54,20 +61,22 @@ const Task = (props) => {
   };
   return (
     <div className="task">
-      <div className="task__edit">
+      <div className="task__container">
+        <div className="task__edit">
+          {state.isEditable ? (
+            <FaTimesCircle onClick={handleEdit} />
+          ) : (
+            <FaRegEdit onClick={handleEdit} />
+          )}
+        </div>
         {state.isEditable ? (
-          <FaTimesCircle onClick={handleEdit} />
+          <EditTask form={state.form} handleInputs={handleInputs} handleSubmit={handleSubmit} />
         ) : (
-          <FaRegEdit onClick={handleEdit} />
+          <DisplayTask handleIsComplete={handleIsComplete} task={task} />
         )}
-      </div>
-      {state.isEditable ? (
-        <EditTask form={state.form} handleInputs={handleInputs} handleSubmit={handleSubmit} />
-      ) : (
-        <DisplayTask handleIsComplete={handleIsComplete} task={task} />
-      )}
-      <div className="task__delete">
-        <FaTrash onClick={() => handleDelete(task._id)} />
+        <div className="task__delete">
+          <FaTrash onClick={() => handleDelete(task._id)} />
+        </div>
       </div>
     </div>
   );

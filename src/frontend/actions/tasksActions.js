@@ -1,5 +1,16 @@
 import axios from 'axios';
-import { GET_TASKS, LOADING, ERROR, SAVE, EDIT_TASK, DELETE_TASK } from '../types/tasksTypes';
+import {
+  GET_TASKS,
+  LOADING,
+  ERROR,
+  SAVE,
+  EDIT_TASK,
+  DELETE_TASK,
+  TOGGLE_COMPLETE_TASK,
+} from '../types/tasksTypes';
+
+const API_URL = 'https://chronos.sergiobuap7.now.sh';
+//const API_URL = 'http://localhost:3001';
 
 export const deleteTask = (taskId) => async (dispatch) => {
   dispatch({
@@ -7,7 +18,7 @@ export const deleteTask = (taskId) => async (dispatch) => {
   });
   try {
     await axios({
-      url: `https://chronos.sergiobuap7.now.sh/api/tasks/${taskId}`,
+      url: `${API_URL}/api/tasks/${taskId}`,
       method: 'delete',
     });
     dispatch({
@@ -24,26 +35,23 @@ export const deleteTask = (taskId) => async (dispatch) => {
 };
 
 export const toggleCompleteTask = (taskId, isComplete) => async (dispatch) => {
-  console.log(taskId);
   dispatch({
     type: LOADING,
   });
   try {
-    await axios({
-      url: `https://chronos.sergiobuap7.now.sh/api/tasks/${taskId}`,
+    const respuesta = await axios({
+      url: `${API_URL}/api/tasks/${taskId}`,
       method: 'put',
       data: {
         isComplete: !isComplete,
       },
     });
-    const respuesta = await axios({
-      url: `https://chronos.sergiobuap7.now.sh/api/tasks/${taskId}`,
-      method: 'get',
-    });
-    dispatch({
-      type: EDIT_TASK,
-      payload: respuesta.data.data,
-    });
+    if (respuesta.status === 200) {
+      dispatch({
+        type: TOGGLE_COMPLETE_TASK,
+        payload: { _id: taskId, isComplete },
+      });
+    }
   } catch (error) {
     console.log(error.message);
     dispatch({
@@ -59,7 +67,7 @@ export const setTask = (newTask) => async (dispatch) => {
   });
   try {
     await axios({
-      url: 'https://chronos.sergiobuap7.now.sh/api/tasks',
+      url: `${API_URL}/api/tasks`,
       method: 'post',
       data: newTask,
     });
@@ -81,12 +89,12 @@ export const editTask = (taskId, formEdit) => async (dispatch) => {
   });
   try {
     await axios({
-      url: `https://chronos.sergiobuap7.now.sh/api/tasks/${taskId}`,
+      url: `${API_URL}/api/tasks/${taskId}`,
       method: 'put',
       data: formEdit,
     });
     const respuesta = await axios({
-      url: `https://chronos.sergiobuap7.now.sh/api/tasks/${taskId}`,
+      url: `${API_URL}/api/tasks/${taskId}`,
       method: 'get',
     });
     dispatch({
@@ -108,7 +116,7 @@ export const getTasks = () => async (dispatch) => {
   });
   try {
     const respuesta = await axios({
-      url: 'https://chronos.sergiobuap7.now.sh/api/tasks',
+      url: `${API_URL}/api/tasks`,
       method: 'get',
     });
     dispatch({

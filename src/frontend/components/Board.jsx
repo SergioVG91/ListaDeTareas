@@ -13,7 +13,7 @@ const Board = ({ tasks, getTasks }) => {
   // useEffect(() => {
   if (tasks.length === 0) getTasks();
   // }, tasks);
-  console.log(tasks);
+
   tasks.sort((a, b) => a.initialHour - b.initialHour);
   return <div className="board">{tasks.map(mapTasks)}</div>;
 };

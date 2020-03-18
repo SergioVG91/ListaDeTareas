@@ -1,4 +1,12 @@
-import { GET_TASKS, ERROR, LOADING, SAVE, EDIT_TASK, DELETE_TASK } from '../types/tasksTypes';
+import {
+  GET_TASKS,
+  ERROR,
+  LOADING,
+  SAVE,
+  EDIT_TASK,
+  DELETE_TASK,
+  TOGGLE_COMPLETE_TASK,
+} from '../types/tasksTypes';
 
 const INITIAL_STATE = {
   tasks: [],
@@ -23,6 +31,8 @@ export default (state = INITIAL_STATE, action) => {
     case EDIT_TASK: {
       return {
         ...state,
+        loading: false,
+        error: '',
         tasks: state.tasks.map((task) => {
           if (task._id === action.payload._id) {
             return action.payload;
@@ -35,6 +45,24 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         tasks: state.tasks.filter((task) => task._id !== action.payload._id),
+        loading: false,
+        error: '',
+      };
+    }
+    case TOGGLE_COMPLETE_TASK: {
+      return {
+        ...state,
+        loading: false,
+        error: '',
+        tasks: state.tasks.map((task) => {
+          if (task._id === action.payload._id) {
+            return {
+              ...task,
+              isComplete: !task.isComplete,
+            };
+          }
+          return task;
+        }),
       };
     }
     default:

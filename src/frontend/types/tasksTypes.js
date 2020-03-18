@@ -9,3 +9,5 @@ export const SAVE = 'SAVE';
 export const EDIT_TASK = 'EDIT_TASK';
 
 export const DELETE_TASK = 'DELETE_TASK';
+
+export const TOGGLE_COMPLETE_TASK = 'TOGGLE_COMPLETE_TASK';
